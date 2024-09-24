@@ -1,0 +1,100 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ArrowRight,
+  BookOpenIcon,
+  Mail,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+export default function NotFound() {
+  const router = useRouter();
+  return (
+    <div className="min-h-svh -mt-52 flex items-center justify-center">
+      <motion.div
+        initial={{ opacity: 0, x: 2 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="md:w-1/2 bg-white flex flex-col justify-center items-center"
+      >
+        <Image
+          src="/UTCC_Horizontal-4.png"
+          alt="UTCC Logo"
+          width={550}
+          height={250}
+          className="mb-8 h-21 object-contain rounded-lg shadow-blue-400 filter drop-shadow-lg"
+        />
+        <h2 className="text-3xl font-bold text-blue-800 mb-4 text-center">
+          University of the Thai Chamber of Commerce
+        </h2>
+        <p className="text-gray-800 mb-8 text-center max-w-md">
+          The page you&apos;re looking for doesn&apos;t exist or has been moved.
+          Let&apos;s get you back on track.
+        </p>
+        <Button
+          onClick={() => router.push("/")}
+          asChild
+          className="bg-blue-800 hover:bg-blue-700 text-white"
+        >
+          <Link
+            href="https://www.utcc.ac.th"
+            className="flex items-center gap-2"
+          >
+            Go to Homepage
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Button>
+        <Accordion type="single" collapsible className="w-full mt-20">
+          <AccordionItem value="faq">
+            <AccordionTrigger>Frequently Asked Questions</AccordionTrigger>
+            <AccordionContent>
+              <ul className="list-disc pl-5 space-y-2 text-left">
+                <li>What should I do if I keep seeing this error?</li>
+                <li>How can I report a persistent issue?</li>
+                <li>Where can I find more help resources?</li>
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="contact">
+            <AccordionTrigger>Contact Support</AccordionTrigger>
+            <AccordionContent>
+              <div className="space-y-4 text-left">
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-5 w-5 text-blue-700" />
+                  <span>support@utcc.ac.th</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-5 w-5 text-blue-700" />
+                  <span>+66 2 697 6000</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MessageCircle className="h-5 w-5 text-blue-700" />
+                  <span>Live Chat (Available 9 AM - 5 PM)</span>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </motion.div>
+    </div>
+  );
+}
