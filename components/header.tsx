@@ -1,0 +1,41 @@
+import { BlendingModeIcon } from "@radix-ui/react-icons";
+import { ModeToggle } from "@/components/mode-toggle";
+import Link from "next/link";
+
+export default function Header() {
+  return (
+    <header>
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <BlendingModeIcon className="mr-2" />
+          <Link href="/" className="font-bold">
+            shadriz
+          </Link>
+        </div>
+        <div>
+          <Link href="https://www.shadriz.com" className="mr-4">
+            Docs
+          </Link>
+          <Link
+            href="/dashboard"
+            className="mr-4"
+          >
+            Dashboard
+          </Link>
+          <Link
+            href="/admin"
+            className="mr-4"
+          >
+            Admin
+          </Link>
+          <Link href="/signin">
+            Sign In
+          </Link>
+          <div className="ml-5 inline-block">
+            <ModeToggle />
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

@@ -1,0 +1,50 @@
+import { auth } from "@/lib/auth";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { hasAdminRole } from "@/lib/authorization";
+import { AvatarIcon, BlendingModeIcon } from "@radix-ui/react-icons";
+import { redirect } from "next/navigation";
+import Link from "next/link";
+import AdminSidebar from "@/components/admin/admin-sidebar";
+
+export default async function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const session = await auth();
+
+  if (!session?.user?.id) {
+    redirect("/admin-login");
+  }
+
+  const isAdmin = await hasAdminRole(session.user.id);
+
+  if (!isAdmin) {
+    redirect("/admin-login?error=Unauthorized");
+  }
+
+  return (
+    <div>
+      <header>
+        <div className="border-b mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="font-bold flex items-center">
+            <BlendingModeIcon className="mr-2" /> <Link href="/">shadriz</Link>
+          </div>
+          <div>
+            <Avatar>
+              <AvatarImage src={session.user?.image ?? undefined} />
+              <AvatarFallback>
+                <AvatarIcon className="w-8 h-8" />
+              </AvatarFallback>
+            </Avatar>
+          </div>
+        </div>
+      </header>
+
+      <div className="flex">
+        <AdminSidebar />
+        <main className="p-5 w-full">{children}</main>
+      </div>
+    </div>
+  );
+}
