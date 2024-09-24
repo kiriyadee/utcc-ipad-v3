@@ -1,8 +1,7 @@
 import { auth } from "@/lib/auth";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { AvatarIcon, BlendingModeIcon } from "@radix-ui/react-icons";
 import { redirect } from "next/navigation";
-import DashboardSidebar from "@/components/private/dashboard-sidebar";
+// import DashboardSidebar from "@/components/private/dashboard-sidebar";
+import DashboardNavbar from "@/components/private/dashboard-navbar";
 
 export default async function Layout({
   children,
@@ -15,24 +14,10 @@ export default async function Layout({
   }
   return (
     <div>
-      <header className="border-b">
-        <div className="mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="font-bold flex items-center">
-            <BlendingModeIcon className="mr-2" /> <a href="/">shadriz</a>
-          </div>
-          <div>
-            <Avatar>
-              <AvatarImage src={session.user?.image ?? undefined} />
-              <AvatarFallback>
-                <AvatarIcon className="w-8 h-8" />
-              </AvatarFallback>
-            </Avatar>
-          </div>
-        </div>
-      </header>
-
+      <DashboardNavbar />
       <div className="flex">
-        <DashboardSidebar />
+        {/* <DashboardSidebar /> */}
+
         <main className="p-5 w-full">{children}</main>
       </div>
     </div>
