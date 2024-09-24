@@ -4,29 +4,10 @@ import {
   GearIcon,
   PersonIcon,
 } from "@radix-ui/react-icons";
-import { Button } from "../ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
 import TeamSwitcher from "./navbar/team-switcher";
 import { MainNav } from "./navbar/main-nav";
 import { Search } from "./navbar/search";
 import { UserNav } from "./navbar/user-nav";
-import { CalendarDateRangePicker } from "./navbar/date-range-picker";
-import { Overview } from "./navbar/overview";
-import { RecentSales } from "./navbar/recent-sales";
-
-const SIDEBAR_LINKS = [
-  { href: "/dashboard", display: "Dashboard", icon: <DashboardIcon /> },
-  { href: "/dashboard/profile", display: "Profile", icon: <PersonIcon /> },
-  { href: "/dashboard/settings", display: "Settings", icon: <GearIcon /> },
-  { href: "/dashboard/signout", display: "Sign Out", icon: <ExitIcon /> },
-];
 
 export default function DashboardNavbar() {
   return (
