@@ -13,6 +13,7 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { Menu, Search } from "lucide-react";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -66,6 +67,9 @@ export default function Header() {
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>
             </Button>
+            <div className="ml-5 inline-block">
+              <ModeToggle />
+            </div>
           </div>
         </div>
       </div>
