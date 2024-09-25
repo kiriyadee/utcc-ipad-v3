@@ -6,77 +6,17 @@ import Link from "next/link";
 export default function Page() {
   return (
     <div>
-      <Header />
       <section>
         <div className="container mx-auto px-6 py-16 text-center">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Full Stack TypeScript Automation
           </h1>
-          <p className="mt-4">
-            Build full stack Next.js apps super fast.
-          </p>
+          <p className="mt-4">Build full stack Next.js apps super fast.</p>
           <Link href="https://www.shadriz.com" className="mt-5 block">
             <Button className="rounded-full">Get Started</Button>
           </Link>
         </div>
       </section>
-
-      <section className="container mx-auto px-6 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">
-          Technologies
-        </h2>
-        <div className="mt-12 flex flex-wrap">
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">TypeScript</h3>
-            <p className="mt-2 text-muted-foreground">
-              JavaScript with syntax for types.
-            </p>
-          </div>
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">Next.js</h3>
-            <p className="mt-2 text-muted-foreground">
-              React framework. Server components. Server actions.
-            </p>
-          </div>
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">shadcn/ui</h3>
-            <p className="mt-2 text-muted-foreground">
-              Customizable UI components.
-            </p>
-          </div>
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">Drizzle ORM</h3>
-            <p className="mt-2 text-muted-foreground">
-              SQL-like and Relational queries. Database migrations.
-            </p>
-          </div>
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">SQL</h3>
-            <p className="mt-2 text-muted-foreground">PostgreSQL, MySQL, or SQLite.</p>
-          </div>
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">TailwindCSS</h3>
-            <p className="mt-2 text-muted-foreground">
-              Utility-first CSS framework.
-            </p>
-          </div>
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">Auth.js</h3>
-            <p className="mt-2 text-muted-foreground">Authentication. OAuth.</p>
-          </div>
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">Stripe</h3>
-            <p className="mt-2 text-muted-foreground">
-              Accept one time and recurring payments.
-            </p>
-          </div>
-          <div className="w-full md:w-1/3 px-4 py-6">
-            <h3 className="text-2xl font-bold">Zod</h3>
-            <p className="mt-2 text-muted-foreground">Data validations.</p>
-          </div>
-        </div>
-      </section>
-      <Footer />
     </div>
   );
 }
