@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out py-6 pr-4 lg:pr-0",
+        "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out lg:py-1 py-2 lg:pr-0 pr-4 lg:pr-0",
         isScrolled ? "bg-white shadow-md" : "bg-transparent"
       )}
     >
@@ -88,7 +88,7 @@ function NavItem({
   return (
     <Link
       href={href}
-      className="lg:text-lg text-sm font-normal text-gray-600 hover:text-primary transition-colors"
+      className="lg:text-md text-sm font-normal text-gray-600 hover:text-primary transition-colors"
     >
       {children}
     </Link>
