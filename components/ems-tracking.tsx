@@ -18,7 +18,8 @@ import {
   MapPin,
   AlertTriangle,
 } from "lucide-react";
-import { toast } from "@/components/ui/use-toast";
+// import { toast } from "@/components/ui/use-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 interface TrackingStep {
   date: string;
@@ -61,10 +62,11 @@ export default function EnhancedEMSTracking() {
   const handleTrack = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!trackingNumber.trim()) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid tracking number.",
-        variant: "destructive",
+      toast.error("Error: Please enter a valid tracking number.", {
+        style: {
+          background: "red",
+          color: "white",
+        },
       });
       return;
     }
