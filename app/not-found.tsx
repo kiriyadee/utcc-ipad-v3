@@ -42,10 +42,7 @@ export default function NotFound() {
           asChild
           className="bg-blue-800 hover:bg-blue-700 text-white"
         >
-          <Link
-            href="https://www.utcc.ac.th"
-            className="flex items-center gap-2"
-          >
+          <Link href="/" className="flex items-center gap-2">
             Go to Homepage
             <ArrowRight className="h-4 w-4" />
           </Link>
