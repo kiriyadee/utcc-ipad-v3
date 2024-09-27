@@ -11,8 +11,7 @@ import {
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
-import { LogIn, Menu, Search } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
+import { LogIn, Search } from "lucide-react";
 import toast from "react-hot-toast";
 
 interface SignInButtonProps {
@@ -33,12 +32,12 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out py-6 pr-4 lg:pr-0",
         isScrolled ? "bg-white shadow-md" : "bg-transparent"
       )}
     >
       <div className="container mx-auto">
-        <div className="flex h-16 items-center justify-between m-4">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <img
@@ -50,7 +49,7 @@ export default function Header() {
               />
             </Link>
           </div>
-          <nav className="hidden md:flex space-x-4">
+          <nav className="hidden md:flex space-x-4 lg:space-x-6 md:pr-4">
             <NavItem href="/about">About</NavItem>
             <NavItem href="/academics">Academics</NavItem>
             <NavItem href="/tracking">Tracking</NavItem>
@@ -62,14 +61,16 @@ export default function Header() {
               <Input
                 type="search"
                 placeholder="Search..."
-                className="w-[250px] pr-8 rounded-full border-blue-800 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+                className="w-[200px] pr-8 rounded-full border-blue-800 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
               />
               <Search className="absolute right-2.5 top-2.5 h-6 w-6 text-gray-400 pointer-events-none -mt-1" />
             </form>
             <SignInButton
               onSignIn={() => toast.success("Successfully created!")}
             />
-            <LanguageSelector />
+            <div className="hidden lg:flex">
+              <LanguageSelector />
+            </div>
           </div>
         </div>
       </div>
@@ -87,7 +88,7 @@ function NavItem({
   return (
     <Link
       href={href}
-      className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+      className="lg:text-lg text-sm font-normal text-gray-600 hover:text-primary transition-colors"
     >
       {children}
     </Link>
@@ -98,7 +99,7 @@ function LanguageSelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="utcc" size="sm" >
+        <Button variant="utcc" size="sm">
           EN
         </Button>
       </DropdownMenuTrigger>
