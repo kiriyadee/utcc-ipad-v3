@@ -16,7 +16,7 @@ import {
 export default function NotFound() {
   const router = useRouter();
   return (
-    <div className="min-h-svh -mt-52 flex items-center justify-center">
+    <div className="min-h-svh -mt-48 flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, x: 2 }}
         animate={{ opacity: 1, x: 0 }}
