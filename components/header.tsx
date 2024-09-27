@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { LogIn, Search } from "lucide-react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 interface SignInButtonProps {
   onSignIn: () => void;
@@ -20,6 +21,7 @@ interface SignInButtonProps {
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const router = useRouter();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +30,10 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
 
   return (
     <header
@@ -65,9 +71,7 @@ export default function Header() {
               />
               <Search className="absolute right-2.5 top-2.5 h-6 w-6 text-gray-400 pointer-events-none -mt-1" />
             </form>
-            <SignInButton
-              onSignIn={() => toast.success("Successfully created!")}
-            />
+            <SignInButton onSignIn={() => handleNavigation("/signin")} />
             <div className="hidden lg:flex">
               <LanguageSelector />
             </div>
