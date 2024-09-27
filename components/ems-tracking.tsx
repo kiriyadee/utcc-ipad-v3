@@ -91,7 +91,7 @@ export default function EnhancedEMSTracking() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center p-4">
+    <div className="min-h-screen relative bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center p-4">
       <Card className="w-full max-w-2xl">
         <CardHeader>
           <CardTitle className="text-3xl font-bold text-center text-blue-800">
