@@ -66,6 +66,7 @@ export default function Header() {
               <Search className="absolute right-2.5 top-2.5 h-6 w-6 text-gray-400 pointer-events-none -mt-1" />
             </form>
             <LanguageSelector />
+            <SignInButton onSignIn={() => alert("Sign in")} />
             <Button variant="outline" size="icon" className="md:hidden">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>
