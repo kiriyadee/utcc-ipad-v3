@@ -13,6 +13,8 @@ export default function ContactPage() {
             src="/UTCC_building-Diagram_2022.jpg"
             alt="UTCC Campus"
             className="w-full object-cover lg:mt-0"
+            lazyBoundary="100vh"
+            loading="lazy"
           />
         </div>
       </div>
