@@ -1,21 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 
 export default function ContactPage() {
   return (
     <div className="min-h-full">
       <div className="overflow-hidden">
         <div className="inset-0">
-          <Image
-            width={1920}
-            height={1080}
-            src="/UTCC_building-Diagram_2022.jpg"
-            alt="UTCC Campus"
-            className="w-full object-cover lg:mt-0"
-            lazyBoundary="100vh"
-            layout="responsive"
-            loading="lazy"
+          <CldImage
+            src="utcc-maps" // Use this sample image or upload your own via the Media Explorer
+            width="1920" // Transform the image: auto-crop to square aspect_ratio
+            height="1080"
+            alt={""}
           />
         </div>
       </div>

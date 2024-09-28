@@ -15,6 +15,27 @@
       "when": 1727498821996,
       "tag": "0001_colossal_malice",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1727510249237,
+      "tag": "0002_rich_clea",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1727511266577,
+      "tag": "0003_yummy_sleeper",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1727511779076,
+      "tag": "0004_yielding_the_order",
+      "breakpoints": true
     }
   ]
 }
