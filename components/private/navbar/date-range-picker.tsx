@@ -51,7 +51,9 @@ export function CalendarDateRangePicker({
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="end">
           <Calendar
-            initialFocus
+            showOutsideDays={true}
+            fixedWeeks={true}
+            showWeekNumber={true}
             mode="range"
             defaultMonth={date?.from}
             selected={date}
