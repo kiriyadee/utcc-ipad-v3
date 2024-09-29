@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Mail, MessageCircle, Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -12,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { CldImage } from "next-cloudinary";
 
 export default function NotFound() {
   const router = useRouter();
@@ -23,13 +23,14 @@ export default function NotFound() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="md:w-1/2 bg-white flex flex-col justify-center items-center"
       >
-        <Image
-          src="/UTCC_Horizontal-4.png"
-          alt="UTCC Logo"
-          width={550}
-          height={250}
+        <CldImage
           className="mb-8 h-21 object-contain rounded-lg shadow-blue-400 filter drop-shadow-lg"
+          src="UTCC_Horizontal" // Use this sample image or upload your own via the Media Explorer
+          width="550" // Transform the image: auto-crop to square aspect_ratio
+          height="250"
+          alt={"UTCC Logo"}
         />
+
         <h2 className="text-3xl font-bold text-blue-800 mb-4 text-center">
           University of the Thai Chamber of Commerce
         </h2>
@@ -64,11 +65,15 @@ export default function NotFound() {
               <div className="space-y-4 text-left">
                 <div className="flex items-center space-x-2">
                   <Mail className="h-5 w-5 text-blue-700" />
-                  <span>support@utcc.ac.th</span>
+                  <Link href={"mailto:support@utcc.ac.th"}>
+                    <span>support@utcc.ac.th</span>
+                  </Link>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="h-5 w-5 text-blue-700" />
-                  <span>+66 2 697 6000</span>
+                  <Link href={"tel:+6626976000"}>
+                    <span>+66 2 697 6000</span>
+                  </Link>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MessageCircle className="h-5 w-5 text-blue-700" />
