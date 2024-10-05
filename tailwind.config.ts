@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["WhetisakDojo", "system-ui", "sans-serif"],
+      },
       colors: {
         utccBlue: "#005BAC",
         utccDarkBlue: "#003E72",

@@ -1,11 +1,19 @@
 import Image from "next/image";
-import SignInForm from "./form";
+import dynamic from "next/dynamic";
 
-export default async function SignInPage() {
+const SignInForm = dynamic(
+  () =>
+    import("./form")
+      .then((mod) => mod.default)
+      .catch(() => () => <div>Failed to load</div>),
+  { ssr: false }
+);
+
+export default function SignInPage() {
   return (
-    <div className="min-h-dvh flex items-center justify-center -mt-64">
-      <div className="flex-col max-w-md px-4 py-8 bg-white rounded-md shadow-lg sm:px-6 md:px-8 lg:px-10">
-        <div className="items-center justify-between pr-4 ">
+    <div className="lg:min-h-dvh flex items-center justify-center pb-4">
+      <div className="flex flex-col px-4 py-8 md:-p-4 bg-white rounded-md lg:shadow-lg shadow-none sm:px-6 md:px-8 sm:max-w-sm md:max-w-lg lg:max-w-3xl">
+        <div className="items-center justify-between flex">
           <Image
             src="/UTCC.png"
             width={350}

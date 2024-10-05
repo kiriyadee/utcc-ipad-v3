@@ -6,8 +6,6 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "IPAD | UTCC",
   description:
@@ -35,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Header />
         {children}
         <Analytics />
