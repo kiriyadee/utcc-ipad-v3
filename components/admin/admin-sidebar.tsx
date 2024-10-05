@@ -2,6 +2,7 @@ import { DashboardIcon, ExitIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 const SIDEBAR_LINKS = [
+  { href: "/admin/customers", display: "Customers", icon: <DashboardIcon /> },
   { href: "/admin/posts", display: "Posts", icon: <DashboardIcon /> },
   { href: "/admin", display: "Admin", icon: <DashboardIcon /> },
   { href: "/signout", display: "Sign Out", icon: <ExitIcon /> },

@@ -1,3 +1,22 @@
+CREATE TABLE IF NOT EXISTS "customers" (
+	"id" text PRIMARY KEY NOT NULL,
+	"customer_id" bigserial NOT NULL,
+	"name" varchar(255),
+	"email" varchar(255),
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	"updated_at" timestamp DEFAULT now() NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "posts" (
+	"id" text PRIMARY KEY NOT NULL,
+	"title" text,
+	"content" text,
+	"is_draft" boolean,
+	"published_at" timestamp,
+	"created_at" timestamp DEFAULT now(),
+	"updated_at" timestamp DEFAULT now()
+);
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "roles" (
 	"id" text PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
@@ -8,6 +27,17 @@ CREATE TABLE IF NOT EXISTS "users_roles" (
 	"user_id" text NOT NULL,
 	"role_id" text NOT NULL,
 	CONSTRAINT "users_roles_user_id_role_id_pk" PRIMARY KEY("user_id","role_id")
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "students" (
+	"id" text PRIMARY KEY NOT NULL,
+	"student_id" bigserial NOT NULL,
+	"frist_name" varchar(255),
+	"last_name" varchar(255),
+	"email" varchar(255),
+	"phone" varchar(255),
+	"created_at" timestamp DEFAULT now(),
+	"updated_at" timestamp DEFAULT now()
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "accounts" (
