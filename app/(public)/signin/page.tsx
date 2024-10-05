@@ -18,10 +18,10 @@ export default async function SignInPage() {
   }
   return (
     <div className="lg:min-h-dvh flex items-center justify-center pb-4">
-      <div className="flex flex-col px-4 py-8 md:-p-4 bg-white rounded-md lg:shadow-lg shadow-none sm:px-6 md:px-8 sm:max-w-sm md:max-w-lg lg:max-w-3xl">
-        <div className="items-center justify-between flex">
+      <div className="flex flex-col px-4 py-8 md:-p-4 bg-white lg:w-2/5 rounded-md lg:shadow-lg shadow-none sm:px-6 md:px-8 sm:max-w-sm md:max-w-lg lg:max-w-3xl">
+        <div className="items-center place-self-center flex">
           <Image
-            src="/UTCC.png"
+            src="https://res.cloudinary.com/dvoitjvzk/image/upload/v1728093325/UTCC_Vertical-1_dnbnji.png"
             width={350}
             height={75}
             alt="UTCC"
