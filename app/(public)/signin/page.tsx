@@ -1,5 +1,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { auth } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 const SignInForm = dynamic(
   () =>
@@ -9,7 +11,11 @@ const SignInForm = dynamic(
   { ssr: false }
 );
 
-export default function SignInPage() {
+export default async function SignInPage() {
+  const session = await auth();
+  if (session) {
+    redirect("/dashboard");
+  }
   return (
     <div className="lg:min-h-dvh flex items-center justify-center pb-4">
       <div className="flex flex-col px-4 py-8 md:-p-4 bg-white rounded-md lg:shadow-lg shadow-none sm:px-6 md:px-8 sm:max-w-sm md:max-w-lg lg:max-w-3xl">

@@ -1,3 +1,4 @@
+import { BarCharts } from "@/components/private/chart/bar-chart";
 import { CalendarDateRangePicker } from "@/components/private/navbar/date-range-picker";
 import { Overview } from "@/components/private/navbar/overview";
 import { RecentSales } from "@/components/private/navbar/recent-sales";
@@ -145,7 +146,9 @@ export default function PrivateDashboardPage() {
                   <CardTitle>Overview</CardTitle>
                 </CardHeader>
                 <CardContent className="pl-2">
+                  {/* // BarCharts component is imported from components/private/chart/bar-chart.tsx */}
                   <Overview />
+                  {/* <BarCharts /> */}
                 </CardContent>
               </Card>
               <Card className="col-span-3">

@@ -16,7 +16,7 @@ import { CldImage } from "next-cloudinary";
 export default function NotFound() {
   const router = useRouter();
   return (
-    <div className="min-h-svh flex items-center justify-center">
+    <div className="min-h-svh -mt-48 flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, x: 2 }}
         animate={{ opacity: 1, x: 0 }}
@@ -24,7 +24,7 @@ export default function NotFound() {
         className="md:w-1/2 bg-white flex flex-col justify-center items-center"
       >
         <CldImage
-          className="mb-8 h-21 object-contain shadow-blue-400 filter drop-shadow-lg rounded-lg"
+          className="mb-8 h-21 object-contain rounded-lg shadow-blue-400 filter drop-shadow-lg"
           src="UTCC_Horizontal" // Use this sample image or upload your own via the Media Explorer
           width="550" // Transform the image: auto-crop to square aspect_ratio
           height="250"

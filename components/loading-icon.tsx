@@ -10,7 +10,8 @@ interface UTCCLoadingIconProps {
 export default function UTCCLoadingIcon({
   size = 64,
   duration = 1.5,
-}: UTCCLoadingIconProps = {}) {
+}: // duration = 10000,
+UTCCLoadingIconProps = {}) {
   const colors = {
     primary: "#003366", // UTCC's primary blue color
     secondary: "#FFD700", // Gold color for accent
@@ -45,7 +46,7 @@ export default function UTCCLoadingIcon({
         strokeWidth="6"
         fill="none"
         variants={circleVariants}
-        transition={{ duration: duration * 0.5, ease: "easeInOut" }}
+        transition={{ duration: duration * 0.5, ease: "easeInOut", delay: 50 }}
       />
 
       {/* Inner circle */}
@@ -61,6 +62,7 @@ export default function UTCCLoadingIcon({
           duration: duration * 0.5,
           delay: duration * 0.2,
           ease: "easeInOut",
+          delayChildren: 50,
         }}
       />
 
@@ -71,7 +73,7 @@ export default function UTCCLoadingIcon({
         strokeWidth="4"
         strokeLinecap="round"
         variants={lineVariants}
-        transition={{ duration: duration, ease: "easeInOut" }}
+        transition={{ duration: duration, ease: "easeInOut", delay: 50 }}
       />
       <motion.path
         d="M 50 65 V 95"
@@ -83,6 +85,7 @@ export default function UTCCLoadingIcon({
           duration: duration,
           delay: duration * 0.2,
           ease: "easeInOut",
+          delayChildren: 50,
         }}
       />
       <motion.path
@@ -95,6 +98,7 @@ export default function UTCCLoadingIcon({
           duration: duration,
           delay: duration * 0.4,
           ease: "easeInOut",
+          delayChildren: 50,
         }}
       />
       <motion.path
@@ -107,6 +111,7 @@ export default function UTCCLoadingIcon({
           duration: duration,
           delay: duration * 0.6,
           ease: "easeInOut",
+          delayChildren: 50,
         }}
       />
 
@@ -124,6 +129,7 @@ export default function UTCCLoadingIcon({
           duration: duration * 2,
           repeat: Infinity,
           ease: "linear",
+          delay: 50,
         }}
       />
     </motion.svg>
