@@ -4,13 +4,9 @@ import { updatePost, UpdatePostState } from "@/actions/admin/posts/update-post";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-// import { GenericCombobox } from "@/components/generic-combobox";
-// import { GenericSelect } from "@/components/generic-select";
+
 import { useFormState } from "react-dom";
-import Link from "next/link";
-import Image from "next/image";
 import { Post } from "@/schema/posts";
 
 export default function PostUpdateForm({ post }: { post: Post }) {

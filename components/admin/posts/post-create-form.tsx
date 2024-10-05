@@ -4,10 +4,7 @@ import { createPost, CreatePostState } from "@/actions/admin/posts/create-post";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-// import { GenericCombobox } from "@/components/generic-combobox"; // Removed as the module does not exist
-// import { GenericSelect } from "@/components/generic-select"; // Removed as the module does not exist
 import { useFormState } from "react-dom";
 
 export default function PostCreateForm({}: {}) {

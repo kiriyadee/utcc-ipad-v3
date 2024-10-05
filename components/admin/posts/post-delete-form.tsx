@@ -4,7 +4,6 @@ import { deletePost, DeletePostState } from "@/actions/admin/posts/delete-post";
 import { Button } from "@/components/ui/button";
 import { useFormState } from "react-dom";
 import { Post } from "@/schema/posts";
-// import { Label } from "@/components/ui/label";
 
 export default function PostDeleteForm({ post }: { post: Post }) {
   const initialState: DeletePostState = {};

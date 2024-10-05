@@ -1,13 +1,12 @@
 "use client";
 
-import { createCustomer, CreateCustomerState } from "@/actions/admin/customers/create-customer";
+import {
+  createCustomer,
+  CreateCustomerState,
+} from "@/actions/admin/customers/create-customer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { GenericCombobox } from "@/components/generic-combobox";
-import { GenericSelect } from "@/components/generic-select";
 import { useFormState } from "react-dom";
 
 export default function CustomerCreateForm() {
@@ -21,21 +20,27 @@ export default function CustomerCreateForm() {
           <Label>Customer Id</Label>
           <Input name="customerId" />
           {state.errors?.customerId?.map((error) => (
-            <p className="text-red-500" key={error}>{error}</p>
+            <p className="text-red-500" key={error}>
+              {error}
+            </p>
           ))}
         </div>
         <div>
           <Label>Name</Label>
           <Input name="name" />
           {state.errors?.name?.map((error) => (
-            <p className="text-red-500" key={error}>{error}</p>
+            <p className="text-red-500" key={error}>
+              {error}
+            </p>
           ))}
         </div>
         <div>
           <Label>Email</Label>
           <Input name="email" />
           {state.errors?.email?.map((error) => (
-            <p className="text-red-500" key={error}>{error}</p>
+            <p className="text-red-500" key={error}>
+              {error}
+            </p>
           ))}
         </div>
         <div>
