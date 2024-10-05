@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
-export default function Component() {
+export default function PaymentStatus() {
   return (
     <div className="max-w-2xl mx-auto p-4">
       <Card>
@@ -27,7 +27,7 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Alert variant="destructive" className="mb-6">
+            <Alert variant="destructive" className="mb-6 items-center flex">
               <XCircle className="h-4 w-4" />
               <AlertTitle>คุณไม่มีสิทธิ์ทำสัญญาครอบครองเครื่อง</AlertTitle>
             </Alert>

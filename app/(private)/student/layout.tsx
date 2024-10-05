@@ -1,12 +1,11 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import DashboardNavbar from "@/components/private/dashboard-navbar";
-import Footer from "@/components/private/footer";
-import "../globals.css";
+import Footer from "@/components/admin/footer";
 import { Metadata } from "next";
+import StudentNavbar from "@/components/private/components/student-navbar";
 
 export const metadata: Metadata = {
-  title: "IPAD | UTCC",
+  title: "Student | UTCC",
   description:
     "UTCC iPad Checkout system allows University of the Thai Chamber of Commerce students to securely manage iPad loans, track their status, and access support services for efficient academic use.",
   openGraph: {
@@ -35,14 +34,12 @@ export default async function Layout({
     redirect("/signin");
   }
   return (
-    <html lang="en">
-      <body>
-        <DashboardNavbar />
-        <div className="flex">
-          <main className="p-5 w-full">{children}</main>
-        </div>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <StudentNavbar />
+      <div className="flex">
+        <main className="p-5 w-full">{children}</main>
+      </div>
+      <Footer />
+    </>
   );
 }

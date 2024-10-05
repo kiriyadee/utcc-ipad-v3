@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "react-hot-toast";
-
 import "./globals.css";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "IPAD | UTCC",
@@ -35,12 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
         <Analytics />
         <SpeedInsights />
         <Toaster />
-        <Footer />
+        {children}
       </body>
     </html>
   );

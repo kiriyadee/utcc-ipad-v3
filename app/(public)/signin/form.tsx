@@ -20,7 +20,7 @@ export default function SignInForm() {
               "use server";
               try {
                 await signIn("credentials", {
-                  redirectTo: "/dashboard",
+                  redirectTo: "/student",
                   email: formData.get("email"),
                   password: formData.get("password"),
                 });
@@ -122,7 +122,7 @@ export default function SignInForm() {
               "use server";
               try {
                 await signIn("google", {
-                  redirectTo: "/dashboard",
+                  redirectTo: "/student",
                 });
               } catch (error) {
                 if (error instanceof AuthError) {

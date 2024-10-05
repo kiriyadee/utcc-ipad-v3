@@ -1,15 +1,9 @@
-import {
-  DashboardIcon,
-  ExitIcon,
-  GearIcon,
-  PersonIcon,
-} from "@radix-ui/react-icons";
 import TeamSwitcher from "./navbar/team-switcher";
 import { MainNav } from "./navbar/main-nav";
 import { Search } from "./navbar/search";
 import { UserNav } from "./navbar/user-nav";
 
-export default function DashboardNavbar() {
+export default function AdminNavbar() {
   return (
     <>
       <div className="hidden flex-col md:flex -">

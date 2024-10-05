@@ -1,7 +1,4 @@
-import { BarCharts } from "@/components/private/chart/bar-chart";
-import { CalendarDateRangePicker } from "@/components/private/navbar/date-range-picker";
-import { Overview } from "@/components/private/navbar/overview";
-import { RecentSales } from "@/components/private/navbar/recent-sales";
+import PaymentStatus from "@/components/private/components/payment-status";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,7 +16,6 @@ export default function PrivateDashboardPage() {
         <div className="flex items-center justify-between space-y-2">
           <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
           <div className="flex items-center space-x-2">
-            <CalendarDateRangePicker />
             <Button>Download</Button>
           </div>
         </div>
@@ -145,11 +141,9 @@ export default function PrivateDashboardPage() {
                 <CardHeader>
                   <CardTitle>Overview</CardTitle>
                 </CardHeader>
-                <CardContent className="pl-2">
-                  {/* // BarCharts component is imported from components/private/chart/bar-chart.tsx */}
-                  <Overview />
-                  {/* <BarCharts /> */}
-                </CardContent>
+                <Card className="col-span-3">
+                  <PaymentStatus />
+                </Card>
               </Card>
               <Card className="col-span-3">
                 <CardHeader>
@@ -158,14 +152,17 @@ export default function PrivateDashboardPage() {
                     You made 265 sales this month.
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <RecentSales />
-                </CardContent>
+                <CardContent></CardContent>
               </Card>
             </div>
           </TabsContent>
         </Tabs>
       </div>
+      {/* <section>
+        <Card className="col-span-3">
+          <PaymentStatus />
+        </Card>
+      </section> */}
     </div>
   );
 }

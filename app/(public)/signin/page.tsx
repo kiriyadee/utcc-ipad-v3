@@ -14,7 +14,7 @@ const SignInForm = dynamic(
 export default async function SignInPage() {
   const session = await auth();
   if (session) {
-    redirect("/dashboard");
+    redirect("/student");
   }
   return (
     <div className="lg:min-h-dvh flex items-center justify-center pb-4">
