@@ -7,10 +7,7 @@
   "pkStrategy": "uuidv7",
   "authEnabled": true,
   "authSolution": "authjs",
-  "authProviders": [
-    "google",
-    "credentials"
-  ],
+  "authProviders": ["google", "credentials"],
   "adminEnabled": true,
   "stripeEnabled": false,
   "sessionStrategy": "database",
