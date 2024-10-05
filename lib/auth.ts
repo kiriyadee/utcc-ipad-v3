@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import NextAuth from "next-auth"
+import NextAuth from "next-auth";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import type { Provider } from "next-auth/providers";
 import { eq } from "drizzle-orm";
@@ -11,7 +11,6 @@ import { uuidv7 } from "uuidv7";
 import Google from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
-
 
 type SessionStrategy = "jwt" | "database";
 
@@ -56,47 +55,45 @@ const fromDate = (time: number, date = Date.now()) => {
 };
 
 const providers: Provider[] = [
-    Google,
-    Credentials({
-      credentials: {
-        email: {},
-        password: { type: "password" },
-      },
-      authorize: async (credentials) => {
-        const email = credentials.email as string;
-        const password = credentials.password as string;
-        const user = await db.query.users.findFirst({
-          where: eq(users.email, email),
+  Google,
+  Credentials({
+    credentials: {
+      email: {},
+      password: { type: "password" },
+    },
+    authorize: async (credentials) => {
+      const email = credentials.email as string;
+      const password = credentials.password as string;
+      const user = await db.query.users.findFirst({
+        where: eq(users.email, email),
+      });
+      if (!user) {
+        throw new Error("User not found.");
+      }
+      if (!user.password) {
+        throw new Error("Password not found.");
+      }
+      const valid = bcrypt.compareSync(password, user.password);
+      if (!valid) {
+        throw new Error("Invalid password.");
+      }
+      if ((SESSION_STRATEGY as SessionStrategy) === "database") {
+        const sessionToken = crypto.randomUUID();
+        const sessionExpiry = fromDate(3600);
+        await adapter.createSession!({
+          sessionToken: sessionToken,
+          expires: sessionExpiry,
+          userId: user.id,
         });
-        if (!user) {
-          throw new Error("User not found.");
-        }
-        if (!user.password) {
-          throw new Error("Password not found.");
-        }
-        const valid = bcrypt.compareSync(password, user.password);
-        if (!valid) {
-          throw new Error("Invalid password.");
-        }
-        if ((SESSION_STRATEGY as SessionStrategy) === "database") {
-          const sessionToken = crypto.randomUUID();
-          const sessionExpiry = fromDate(3600);
-          await adapter.createSession!({
-            sessionToken: sessionToken,
-            expires: sessionExpiry,
-            userId: user.id,
-          });
-          const cookieStore = cookies();
-          cookieStore.set("next-auth.session-token", sessionToken, {
-            expires: sessionExpiry,
-          });
-        }
-        return user;
-      },
-    }),
-
-]
-
+        const cookieStore = cookies();
+        cookieStore.set("next-auth.session-token", sessionToken, {
+          expires: sessionExpiry,
+        });
+      }
+      return user;
+    },
+  }),
+];
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: adapter,
@@ -144,4 +141,4 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session;
     },
   },
-})
+});

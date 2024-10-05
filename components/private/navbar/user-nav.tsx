@@ -15,12 +15,17 @@ import Link from "next/link";
 
 export async function UserNav() {
   const session = await auth();
+  const profileImage =
+    "https://res.cloudinary.com/dvoitjvzk/image/upload/v1728099868/AdobeStock_590598870_Preview-transformed-removebg_esiprw.png";
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-8 w-8">
-            <AvatarImage src="/avatars/01.png" alt="@shadcn" />
+            <AvatarImage
+              src={profileImage}
+              alt={profileImage.substring(1, 3)}
+            />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
         </Button>

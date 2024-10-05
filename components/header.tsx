@@ -12,7 +12,7 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { LogIn, Search } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 
 interface SignInButtonProps {
@@ -22,6 +22,7 @@ interface SignInButtonProps {
 export default function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -35,10 +36,12 @@ export default function Header() {
     router.push(path);
   };
 
+  // check if the user current path will hide the sign in button
+
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out lg:py-1 py-2 lg:pr-0 pr-4 lg:pr-0",
+        "sticky top-0 z-50 w-full transition-all duration-300 ease-in-out lg:py-1 py-2 pr-4 lg:pr-0",
         isScrolled ? "bg-white shadow-md" : "bg-transparent"
       )}
     >
@@ -125,4 +128,7 @@ function SignInButton({ onSignIn }: SignInButtonProps) {
       Sign In
     </Button>
   );
+}
+function useAuth() {
+  throw new Error("Function not implemented.");
 }
