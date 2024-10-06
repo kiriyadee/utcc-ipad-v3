@@ -11,6 +11,7 @@
   "dependencies": {
     "@auth/drizzle-adapter": "^1.5.3",
     "@hookform/resolvers": "^3.9.0",
+    "@next/third-parties": "^14.2.14",
     "@paralleldrive/cuid2": "^2.2.2",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",

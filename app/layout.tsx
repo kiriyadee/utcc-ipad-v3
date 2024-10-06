@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "react-hot-toast";
+import { GoogleTagManager } from "@next/third-parties/google";
+
 import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "IPAD | UTCC",
@@ -33,13 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="G-5304FZL3H3" />
       <body>
-        {/* <Header /> */}
         <Analytics />
         <SpeedInsights />
         <Toaster />
         {children}
-        {/* <Footer /> */}
       </body>
     </html>
   );
