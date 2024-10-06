@@ -37,8 +37,8 @@ export default async function Layout({
   }
   return (
     <>
-      <StudentNavbar />
-      <div className="flex">
+      <div className="">
+        <StudentNavbar />
         <main className="p-5 w-full">{children}</main>
       </div>
       <Footer />

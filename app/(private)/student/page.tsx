@@ -2,13 +2,6 @@ import OverviewStatus from "@/components/private/components/overview-status";
 import PaymentStatus from "@/components/private/components/payment-status";
 import StudentForm from "@/components/private/components/student-form";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardDescription,
-} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function PrivateDashboardPage() {

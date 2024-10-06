@@ -46,7 +46,7 @@ export async function UserNavbar() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <Link href="/profile" className="hover:pointer">
+          <Link href="/student/profile" className="hover:pointer">
             <DropdownMenuItem>
               Profile
               <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
@@ -56,7 +56,7 @@ export async function UserNavbar() {
             Billing
             <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <Link href="/settings" className="hover:pointer">
+          <Link href="/student/settings" className="hover:pointer">
             <DropdownMenuItem>
               Settings
               <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>

@@ -14,11 +14,12 @@ export default async function StudentForm() {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="personal" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="personal">คำขอยืมกู้</TabsTrigger>
-            <TabsTrigger value="documents">เอกสารยืนกู้</TabsTrigger>
-            <TabsTrigger value="contract">สัญญากู้ยืมเงิน</TabsTrigger>
-            <TabsTrigger value="transactions">รายการเบิกเงินกู้ยืม</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-5">
+            <TabsTrigger value="personal">การชำระเงิน</TabsTrigger>
+            <TabsTrigger value="documents">ตรวจสอบสิทธิ์</TabsTrigger>
+            <TabsTrigger value="contract">ตรวจสอบข้อมูล</TabsTrigger>
+            <TabsTrigger value="aprrove">ยืนยอมสัญญา</TabsTrigger>
+            <TabsTrigger value="transactions">ข้อมูลเครื่อง</TabsTrigger>
           </TabsList>
           <TabsContent value="personal">
             <div className="space-y-4">

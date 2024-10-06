@@ -13,8 +13,8 @@ import { Paperclip } from "lucide-react";
 
 export default function LoanDetails() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6">รายละเอียดการยื่นกู้</h1>
+    <div className="container mx-auto">
+      <h1 className="text-md font-bold mb-6">รายละเอียดการยื่นกู้</h1>
 
       <Card className="mb-6">
         <CardContent className="p-0">
@@ -46,12 +46,6 @@ export default function LoanDetails() {
       </Card>
 
       <Tabs defaultValue="documents">
-        <TabsList className="grid w-full grid-cols-4">
-          <TabsTrigger value="loan">คำขอยืมกู้</TabsTrigger>
-          <TabsTrigger value="documents">เอกสารยืนกู้</TabsTrigger>
-          <TabsTrigger value="contract">สัญญากู้ยืมเงิน</TabsTrigger>
-          <TabsTrigger value="transactions">รายการเบิกเงินกู้ยืม</TabsTrigger>
-        </TabsList>
         <TabsContent value="documents">
           <Card>
             <CardHeader>
