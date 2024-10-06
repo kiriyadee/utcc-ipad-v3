@@ -84,7 +84,7 @@ const fetchData = async () => {
   };
 };
 
-export default function Component() {
+export default function OverviewStatus() {
   const [data, setData] = useState<Data | null>(null);
   const [loading, setLoading] = useState(true);
   const [showAgreement, setShowAgreement] = useState(false);
@@ -101,7 +101,7 @@ export default function Component() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>สัญญาครอบครองเครื่อง iPad (ระดับปริญญาตรี)</CardTitle>

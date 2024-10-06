@@ -1,7 +1,8 @@
-import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import Footer from "@/components/admin/footer";
 import { Metadata } from "next";
+
+import { auth } from "@/lib/auth";
+import Footer from "@/components/admin/footer";
 import StudentNavbar from "@/components/private/components/student-navbar";
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default async function Layout({
 }) {
   const session = await auth();
   if (!session) {
+    console.log("No session found, redirecting to /signin");
     redirect("/signin");
   }
   return (
