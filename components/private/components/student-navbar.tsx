@@ -12,7 +12,7 @@ export default function StudentNavbar() {
             backgroundColor: "#2e3192",
           }}
         >
-          <div className="flex h-16 items-center px-4">
+          <div className="flex h-16 items-center px-4 lg:pr-10 lg:pl-10">
             <MainNav className="" />
             <div className="ml-auto flex items-center space-x-4">
               <div className="">

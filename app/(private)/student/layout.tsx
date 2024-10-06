@@ -37,7 +37,7 @@ export default async function Layout({
   }
   return (
     <>
-      <div className="">
+      <div className="min-h-svh">
         <StudentNavbar />
         <main className="p-5 w-full">{children}</main>
       </div>
