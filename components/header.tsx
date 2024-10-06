@@ -12,7 +12,7 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { LogIn, Search } from "lucide-react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 
 interface SignInButtonProps {
@@ -22,7 +22,6 @@ interface SignInButtonProps {
 export default function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const router = useRouter();
-  const pathname = usePathname();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -35,8 +34,6 @@ export default function Header() {
   const handleNavigation = (path: string) => {
     router.push(path);
   };
-
-  // check if the user current path will hide the sign in button
 
   return (
     <header
@@ -74,7 +71,9 @@ export default function Header() {
               />
               <Search className="absolute right-2.5 top-2.5 h-6 w-6 text-gray-400 pointer-events-none -mt-1" />
             </form>
+
             <SignInButton onSignIn={() => handleNavigation("/signin")} />
+
             <div className="hidden lg:flex">
               <LanguageSelector />
             </div>
@@ -128,7 +127,4 @@ function SignInButton({ onSignIn }: SignInButtonProps) {
       Sign In
     </Button>
   );
-}
-function useAuth() {
-  throw new Error("Function not implemented.");
 }
