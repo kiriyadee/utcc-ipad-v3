@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install
-        run: |
+        run: pnpm install --frozen-lockfile
         # force a development install, to make sure dev dependencies are installed
         # they get filtered out by the standalone build for next
       - name: Build
