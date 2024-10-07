@@ -19,10 +19,13 @@ jobs:
         with:
           submodules: true
           lfs: false
+
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Install
