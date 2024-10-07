@@ -20,8 +20,11 @@ export async function UserNav() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-          <Avatar className="h-8 w-8">
+        <Button
+          variant="ghost"
+          className="relative h-10 w-10 rounded-full ring-white ring-0 bg-white"
+        >
+          <Avatar className="h-9 w-9">
             <AvatarImage
               src={profileImage}
               alt={profileImage.substring(1, 3)}

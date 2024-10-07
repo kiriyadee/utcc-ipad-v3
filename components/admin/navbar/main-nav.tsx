@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,12 @@ export function MainNav({
       className={cn("flex items-center space-x-4 lg:space-x-6", className)}
       {...props}
     >
+      <Image
+        src="https://res.cloudinary.com/dvoitjvzk/image/upload/v1727589565/UTCC_Horizontal.png"
+        width={175}
+        height={45}
+        alt={"UTCC_Logo"}
+      />
       <Link
         href="/dashboard"
         className="text-sm font-medium transition-colors hover:text-primary"

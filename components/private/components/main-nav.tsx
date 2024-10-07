@@ -26,6 +26,18 @@ export function MainNav({
       >
         Overview
       </Link>
+      <Link
+        href="/student/status"
+        className="font-medium transition-colors hover:text-primary active:underline"
+      >
+        Status
+      </Link>
+      <Link
+        href="/tracking"
+        className="font-medium transition-colors hover:text-primary active:underline"
+      >
+        Tracking
+      </Link>
       {/* <Link
         href="/student/settings"
         className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"

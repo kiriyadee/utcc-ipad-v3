@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { auth } from "@/lib/auth";
 import LoanDetails from "./loan-details";
+import PaymentStatus from "./payment-status";
 
 export default async function StudentForm() {
   const session = await auth();
@@ -14,14 +15,15 @@ export default async function StudentForm() {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="personal" className="w-full">
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="personal">การชำระเงิน</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-6 space-x-1">
+            <TabsTrigger value="info">ข้อมูลผู้ยืม</TabsTrigger>
+            <TabsTrigger value="payment">การชำระเงิน</TabsTrigger>
             <TabsTrigger value="documents">ตรวจสอบสิทธิ์</TabsTrigger>
             <TabsTrigger value="contract">ตรวจสอบข้อมูล</TabsTrigger>
             <TabsTrigger value="aprrove">ยืนยอมสัญญา</TabsTrigger>
             <TabsTrigger value="transactions">ข้อมูลเครื่อง</TabsTrigger>
           </TabsList>
-          <TabsContent value="personal">
+          <TabsContent value="info">
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-medium">ข้อมูลผู้ยืม</h3>
@@ -96,6 +98,9 @@ export default async function StudentForm() {
           </TabsContent>
           <TabsContent value="documents">
             <LoanDetails />
+          </TabsContent>
+          <TabsContent value="payment">
+            <PaymentStatus />
           </TabsContent>
           {/* Add other TabsContent for documents, contract, and transactions */}
         </Tabs>

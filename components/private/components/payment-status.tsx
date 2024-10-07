@@ -82,12 +82,10 @@ export default function PaymentStatus() {
             </Alert>
           </motion.div>
         </CardContent>
-        <CardFooter className="flex flex-wrap justify-center gap-2">
-          <Button variant="outline">ย้อนกลับ</Button>
+        <CardFooter className="flex flex-wrap justify-center gap-1">
           <Button className="bg-green-500 hover:bg-green-600">
             ชำระเงินออนไลน์
           </Button>
-          <Button variant="secondary">คู่มือการชำระเงิน</Button>
           <Button variant="secondary">ติดต่อสำนักทะเบียนและประมวลผล</Button>
         </CardFooter>
       </Card>
