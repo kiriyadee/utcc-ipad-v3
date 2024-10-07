@@ -25,14 +25,12 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install pnpm
-        run: npm install -g pnpm
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: yarn install --frozen-lockfile
       - name: npm install, build, and test
         run: |
-          pnpm install
-          pnpm run build
+          yarn install
+          yarn run build
           mv ./build/static ./build/standalone/build
           mv ./public ./build/standalone
         # force a development install, to make sure dev dependencies are installed
