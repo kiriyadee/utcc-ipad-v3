@@ -26,8 +26,8 @@ export function MainNav({
         href="/admin"
         className={`link ${
           pathname === "/admin"
-            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary shadow-white"
-            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+            ? "active text-sm font-medium text-gray-50 transition-colors hover:text-primary"
+            : "text-sm font-medium text-gray-300 transition-colors hover:text-primary"
         }`}
       >
         Overview
@@ -36,8 +36,8 @@ export function MainNav({
         href="/admin/customers"
         className={`link ${
           pathname === "/admin/customers"
-            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary"
-            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+            ? "active text-sm font-medium text-gray-50 transition-colors hover:text-primary"
+            : "text-sm font-medium text-gray-300 transition-colors hover:text-primary"
         }`}
       >
         Customers
@@ -46,7 +46,7 @@ export function MainNav({
         href="/admin/students"
         className={`link ${
           pathname === "/admin/students"
-            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary"
+            ? "active text-sm font-medium text-gray-50 transition-colors hover:text-primary"
             : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
         }`}
       >
@@ -56,8 +56,8 @@ export function MainNav({
         href="/admin/posts"
         className={`link ${
           pathname === "/admin/posts"
-            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary"
-            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+            ? "active text-sm font-medium text-gray-50 transition-colors hover:text-primary"
+            : "text-sm font-medium text-gray-300 transition-colors hover:text-primary"
         }`}
       >
         Posts
@@ -66,8 +66,8 @@ export function MainNav({
         href="/admin/settings"
         className={`link ${
           pathname === "/admin/settings"
-            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary"
-            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+            ? "active text-sm font-medium text-gray-50 transition-colors hover:text-primary"
+            : "text-sm font-medium text-gray-300 transition-colors hover:text-primary"
         }`}
       >
         Settings
