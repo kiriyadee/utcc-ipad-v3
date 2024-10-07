@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
@@ -7,6 +10,7 @@ export function MainNav({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
+  const pathname = usePathname();
   return (
     <nav
       className={cn("flex items-center space-x-4 lg:space-x-6", className)}
@@ -19,26 +23,52 @@ export function MainNav({
         alt={"UTCC_Logo"}
       />
       <Link
-        href="/dashboard"
-        className="text-sm font-medium transition-colors hover:text-primary"
+        href="/admin"
+        className={`link ${
+          pathname === "/admin"
+            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary shadow-white"
+            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+        }`}
       >
         Overview
       </Link>
       <Link
-        href="/dashboard"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+        href="/admin/customers"
+        className={`link ${
+          pathname === "/admin/customers"
+            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary"
+            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+        }`}
       >
         Customers
       </Link>
       <Link
-        href="/dashboard"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+        href="/admin/students"
+        className={`link ${
+          pathname === "/admin/students"
+            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary"
+            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+        }`}
       >
-        Products
+        Students
       </Link>
       <Link
-        href="/settings"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+        href="/admin/posts"
+        className={`link ${
+          pathname === "/admin/posts"
+            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary"
+            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+        }`}
+      >
+        Posts
+      </Link>
+      <Link
+        href="/admin/settings"
+        className={`link ${
+          pathname === "/admin/settings"
+            ? "active text-sm font-medium text-gray-100 transition-colors hover:text-primary"
+            : "text-sm font-bold text-gray-300 transition-colors hover:text-primary"
+        }`}
       >
         Settings
       </Link>

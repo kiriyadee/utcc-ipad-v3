@@ -17,6 +17,7 @@ export async function UserNav() {
   const session = await auth();
   const profileImage =
     "https://res.cloudinary.com/dvoitjvzk/image/upload/v1728099868/AdobeStock_590598870_Preview-transformed-removebg_esiprw.png";
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
