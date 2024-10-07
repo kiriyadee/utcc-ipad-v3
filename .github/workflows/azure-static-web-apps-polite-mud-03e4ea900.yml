@@ -31,8 +31,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: npm install, build, and test
         run: |
-          npm install
-          npm run build
+          pnpm install
+          pnpm run build
           mv ./build/static ./build/standalone/build
           mv ./public ./build/standalone
         # force a development install, to make sure dev dependencies are installed
