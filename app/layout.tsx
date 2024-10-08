@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { GoogleAnalytics } from "@next/third-parties/google";
-
 import "./globals.css";
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 export const metadata: Metadata = {
   title: "IPAD | UTCC",
@@ -32,7 +34,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics gaId="G-5304FZL3H3" />
-
       <body>
         <Toaster />
         {children}
