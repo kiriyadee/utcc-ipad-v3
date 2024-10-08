@@ -26,9 +26,6 @@ export default async function Layout({
     <div>
       <div>
         <DashboardNavbar />
-        {/* <div className="flex">
-          <main className="p-5 w-full">{children}</main>
-        </div> */}
       </div>
 
       <div className="flex">
