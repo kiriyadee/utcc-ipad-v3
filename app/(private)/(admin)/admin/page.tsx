@@ -2,6 +2,17 @@ import { BarCharts } from "@/components/admin/chart/bar-chart";
 import { CalendarDateRangePicker } from "@/components/admin/navbar/date-range-picker";
 import { Overview } from "@/components/admin/navbar/overview";
 import { RecentSales } from "@/components/admin/navbar/recent-sales";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,6 +22,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { signOut } from "@/lib/auth";
 
 export default function AdminDashboardPage() {
   return (
@@ -165,6 +177,29 @@ export default function AdminDashboardPage() {
             </div>
           </TabsContent>
         </Tabs>
+      </div>
+      <div>
+        <AlertDialog>
+          <AlertDialogTrigger>Open</AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+              <AlertDialogDescription></AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogAction>
+                <form
+                  action={async () => {
+                    "use server";
+                    await signOut({ redirectTo: "/" });
+                  }}
+                >
+                  <Button type="submit">Sign out</Button>
+                </form>
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     </div>
   );

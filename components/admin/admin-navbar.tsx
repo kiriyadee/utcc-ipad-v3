@@ -1,6 +1,4 @@
-import TeamSwitcher from "./navbar/team-switcher";
 import { MainNav } from "./navbar/main-nav";
-import { Search } from "./navbar/search";
 import { UserNav } from "./navbar/user-nav";
 
 export default function AdminNavbar() {
