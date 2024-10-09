@@ -3,7 +3,7 @@ const nextConfig = {
   distDir: "build",
   output: "standalone",
   images: {
-    domains: ["res.cloudinary.com", "ipad-utcc-stage.boring9.dev"],
+    domains: ["res.cloudinary.com", "ipadcheckout.boring9.dev"],
   },
 };
 
