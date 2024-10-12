@@ -1,17 +1,27 @@
+import {
+  AnimationStudent,
+  CicleAnimation,
+} from "@/components/animation/student";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Page() {
   return (
-    <div>
-      <section>
-        <div className="container mx-auto px-6 py-16 text-center">
-          <p className="mt-4">Build full stack Next.js apps super fast.</p>
-          <Link href="https://www.shadriz.com" className="mt-5 block">
-            <Button className="rounded-full">Get Started</Button>
-          </Link>
-        </div>
-      </section>
+    <div className="w-4/5 container mx-auto">
+      <div className="flex items-center bg-red-50">
+        <section>
+          <h1 className="mt-4 font-sans font-extrabold text-9xl text-gray-800">
+            Check Out!
+          </h1>
+          <span className="font-sans font-bold text-7xl">The Your Ipad</span>
+        </section>
+        <section className="">
+          <AnimationStudent />
+        </section>
+        <section className="">
+          <CicleAnimation />
+        </section>
+      </div>
     </div>
   );
 }

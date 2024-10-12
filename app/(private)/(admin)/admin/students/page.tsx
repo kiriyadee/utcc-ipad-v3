@@ -6,6 +6,8 @@ import StudentTable from "@/components/private/students/student-table";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { Icons } from "@/components/icons";
+import StudentExcelDialog from "@/components/private/students/student-upload-excel";
 
 export default async function Page({
   searchParams,
@@ -27,14 +29,19 @@ export default async function Page({
     <div>
       <h1 className="text-3xl font-bold mb-6">Students</h1>
       <div className="text-right mr-2">
-        <Link href="/students/new">
+        <Link href="/admin/students/new">
           <Button>
             <PlusIcon className="mr-2" /> New
           </Button>
         </Link>
+        <Link href={""}>
+          <Button>
+            <StudentExcelDialog />
+          </Button>
+        </Link>
       </div>
       <div className="mb-5">
-        <StudentTable studentList={ studentList } />
+        <StudentTable studentList={studentList} />
       </div>
       <div>
         <Pagination page={page} pageSize={pageSize} totalPages={totalPages} />
