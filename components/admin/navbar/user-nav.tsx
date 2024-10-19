@@ -29,7 +29,7 @@ export async function UserNav() {
         >
           <Avatar className="h-9 w-9">
             <AvatarImage
-              src={profileImage}
+              src="/img/UTCC_Horizontal.png"
               alt={profileImage.substring(1, 3)}
             />
             <AvatarFallback>SC</AvatarFallback>

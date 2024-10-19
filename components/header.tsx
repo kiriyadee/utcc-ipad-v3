@@ -2,6 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { LogIn, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,9 +15,6 @@ import {
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
-import { LogIn, Search } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { CldImage } from "next-cloudinary";
 
 interface SignInButtonProps {
   onSignIn: () => void;
@@ -46,8 +47,8 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <CldImage
-                src="UTCC_LOGO" // Use this sample image or upload your own via the Media Explorer
+              <Image
+                src="/img/UTCC_LOGO.png" // Use this sample image or upload your own via the Media Explorer
                 alt="UTCC Logo"
                 className="flex items-center space-x-2"
                 width={250}

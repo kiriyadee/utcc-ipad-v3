@@ -21,7 +21,7 @@ export default function SignInForm() {
               try {
                 await signIn("credentials", {
                   redirectTo: "/student",
-                  email: formData.get("email"),
+                  email: formData.get("username"),
                   password: formData.get("password"),
                 });
               } catch (error) {
@@ -40,7 +40,7 @@ export default function SignInForm() {
                   htmlFor="email"
                   className="mb-1 text-xs tracking-wide text-gray-600 sm:text-sm"
                 >
-                  E-Mail Address: @utcc.ac.th
+                  Student Number (ID)
                 </Label>
                 <div className="relative">
                   <div className="absolute top-0 left-0 inline-flex items-center justify-center w-10 h-full text-gray-400">
@@ -58,11 +58,11 @@ export default function SignInForm() {
                   </div>
 
                   <Input
-                    className="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-lg sm:text-base focus:outline-none focus:border-blue-400"
-                    id="email"
+                    className="w-full py-2 pl-10 pr-4 text-xs placeholder-gray-500 border border-gray-400 rounded-lg sm:text-base focus:outline-none focus:border-blue-400"
+                    id="username"
                     type="text"
-                    name="email"
-                    placeholder="E-Mail Address"
+                    name="username"
+                    placeholder="student number"
                     autoComplete="email"
                     required
                   />
@@ -98,7 +98,7 @@ export default function SignInForm() {
                     type="password"
                     name="password"
                     className="w-full py-2 pl-10 pr-4 text-sm placeholder-gray-500 border border-gray-400 rounded-lg sm:text-base focus:outline-none focus:border-blue-400"
-                    placeholder="Password"
+                    placeholder="password"
                     required
                   />
                 </div>

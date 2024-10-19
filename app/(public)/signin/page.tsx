@@ -17,13 +17,13 @@ export default async function SignInPage() {
     redirect("/student");
   }
   return (
-    <div className="lg:min-h-dvh flex items-center justify-center pb-4">
-      <div className="flex flex-col px-4 py-8 md:-p-4 bg-white lg:w-2/5 -mt-10 lg:mt-0 md:mt-0 rounded-md lg:shadow-lg shadow-none sm:px-6 md:px-8 sm:max-w-sm md:max-w-lg lg:max-w-3xl">
+    <div className="lg:min-h-dvh flex items-center justify-center">
+      <div className="flex flex-col px-4 py-8 md:-p-4 bg-white lg:w-2/6 -mt-10 lg:mt-0 md:mt-0 rounded-md lg:shadow-lg shadow-none sm:px-6 md:px-8 sm:max-w-sm md:max-w-lg lg:max-w-3xl">
         <div className="items-center place-self-center flex">
           <Image
-            src="https://res.cloudinary.com/dvoitjvzk/image/upload/v1728093325/UTCC_Vertical-1_dnbnji.png"
-            width={375}
-            height={75}
+            src="/img/UTCC_Vertical.png"
+            width={275}
+            height={50}
             alt="UTCC"
             loading="lazy"
           />
@@ -36,7 +36,7 @@ export default async function SignInPage() {
           </div>
         </div>
 
-        <div className="mt-6 lg:mt-10">
+        <div className="mt-6 lg:mt-10 lg:w-full">
           <SignInForm />
         </div>
       </div>
