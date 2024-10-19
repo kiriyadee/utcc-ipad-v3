@@ -59,7 +59,7 @@ export default function AdminLoginPage({
               <Input
                 type="text"
                 name="email"
-                placeholder="ipad@utcc.ac.th"
+                placeholder="student_id@@live4.utcc.ac.th"
                 required
               />
             </div>
