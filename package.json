@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth/drizzle-adapter": "^1.6.1",
+    "@auth/drizzle-adapter": "^1.7.2",
     "@hookform/resolvers": "^3.9.0",
     "@lottiefiles/react-lottie-player": "^3.5.4",
     "@next/third-parties": "^14.2.14",

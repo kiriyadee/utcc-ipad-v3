@@ -20,10 +20,10 @@
     preact "10.11.3"
     preact-render-to-string "5.2.3"
 
-"@auth/core@0.37.1":
-  version "0.37.1"
-  resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.37.1.tgz#478cc673490d54d77e8bad0d892e0b5a4b5bc9b1"
-  integrity sha512-85PosPEZXHKZhEaAH5DVCig2N1Cu5PC8CbWX03Dw9g1JISLHyrRT0RZRcaWlgmz+0Ua4N52sFRX+g9WARQaUlA==
+"@auth/core@0.37.2":
+  version "0.37.2"
+  resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.37.2.tgz#0db8a94a076846bd88eb7f9273618513e2285cb2"
+  integrity sha512-kUvzyvkcd6h1vpeMAojK2y7+PAV5H+0Cc9+ZlKYDFhDY31AlvsB+GW5vNO4qE3Y07KeQgvNO9U0QUx/fN62kBw==
   dependencies:
     "@panva/hkdf" "^1.2.1"
     "@types/cookie" "0.6.0"
@@ -33,12 +33,12 @@
     preact "10.11.3"
     preact-render-to-string "5.2.3"
 
-"@auth/drizzle-adapter@^1.6.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@auth/drizzle-adapter/-/drizzle-adapter-1.7.1.tgz#c6da8d2abccb71ced2a8a9d8d4f7dc2812d9e082"
-  integrity sha512-WJSh39zEtynJw6GVS8MCnB2qXw1q7IkMbG2GiHx4jiQWDpHXE+idGSeBuZXS+J8tQnLexQa6v8hnz+wmalM74w==
+"@auth/drizzle-adapter@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@auth/drizzle-adapter/-/drizzle-adapter-1.7.2.tgz#efb97cc3de51fb5c8d152d49ad45d88f3ecb2f49"
+  integrity sha512-PrXsbzcOGkw9A/lHr44SIOw0FBdXm9Me5xzmLCC54anPTiMmOq2FnJLjnPPnZZ/IKVOfTkSNOn9w9jtQgl2mCw==
   dependencies:
-    "@auth/core" "0.37.1"
+    "@auth/core" "0.37.2"
 
 "@babel/runtime@^7.13.10", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.25.7"
@@ -2006,7 +2006,6 @@ csstype@^3.0.2:
 
 "cuid2@link:@types/paralleldrive/cuid2":
   version "0.0.0"
-  uid ""
 
 "d3-array@2 - 3", "d3-array@2.10.0 - 3", d3-array@^3.1.6:
   version "3.2.4"
