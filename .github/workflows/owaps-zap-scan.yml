@@ -1,0 +1,22 @@
+name: OWASP ZAP Integration with GitHub Actions
+
+on: [push]
+permissions:
+  issues: write
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    name: Scan the web application
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          docker_name: "zaproxy/zap-stable"
+          target: "https://ipadcheckout.boring9.dev/"
+          rules_file_name: ".zap/rules.tsv"
+          cmd_options: "-a"

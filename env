@@ -1,0 +1,13 @@
+DB_URL="postgres://tsdbadmin@h8osszfnko.lwhr3ennef.tsdb.cloud.timescale.com:37705/tsdb?sslmode=require"
+AUTH_SECRET="secret"
+AUTH_TRUST_HOST="https://utcc-ipad-v3.vercel.app/"
+REDIS_URL="redis://default:4B2YLdY77f6sk8TAIgTvwmmzi8yYUmoN@redis-16012.c98.us-east-1-4.ec2.redns.redis-cloud.com:16012"
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="dvoitjvzk"
+CLOUDINARY_URL="cloudinary://277786272726943:NT_72MF4QHdb6N4dBqLzxPr_mE0@dvoitjvzk"
+API_SECRET="NT_72MF4QHdb6N4dBqLzxPr_mE0"
+API_KEY="277786272726943"
+CLOUDINARY_ID="dvoitjvzk"
+
+
+mJuszXfWpqvnVgIf

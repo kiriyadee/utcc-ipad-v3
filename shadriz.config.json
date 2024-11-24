@@ -1,0 +1,16 @@
+{
+  "version": "3.0.1",
+  "packageManager": "pnpm",
+  "latest": false,
+  "dbDialect": "postgresql",
+  "dbPackage": "pg",
+  "pkStrategy": "uuidv7",
+  "authEnabled": true,
+  "authSolution": "authjs",
+  "authProviders": ["google", "credentials"],
+  "adminEnabled": true,
+  "stripeEnabled": false,
+  "sessionStrategy": "database",
+  "darkModeEnabled": true,
+  "install": true
+}
