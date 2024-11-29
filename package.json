@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,7 +12,7 @@
     "@auth/drizzle-adapter": "^1.7.4",
     "@hookform/resolvers": "^3.9.0",
     "@lottiefiles/react-lottie-player": "^3.5.4",
-    "@next/third-parties": "^15.0.3",
+    "@next/third-parties": "15.0.3",
     "@paralleldrive/cuid2": "^2.2.2",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
@@ -54,14 +54,14 @@
     "framer-motion": "^11.11.17",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.460.0",
-    "next": "14.2.14",
+    "next": "15.0.3",
     "next-auth": "5.0.0-beta.20",
     "next-cloudinary": "^6.14.1",
     "next-nprogress-bar": "^2.3.13",
     "pg": "^8.13.0",
-    "react": "^18.3.1",
+    "react": "19.0.0-rc-66855b96-20241106",
     "react-day-picker": "8.10.1",
-    "react-dom": "^18.3.1",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-hook-form": "^7.53.2",
     "react-hot-toast": "^2.4.1",
     "react-resizable-panels": "^2.1.4",
@@ -78,8 +78,8 @@
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^22.7.4",
     "@types/pg": "^8.11.10",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "cuid2": "link:@types/paralleldrive/cuid2",
     "drizzle-kit": "^0.28.1",
     "eslint": "^9.12.0",
@@ -88,5 +88,9 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.7.2"
+  },
+  "resolutions": {
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
   }
 }

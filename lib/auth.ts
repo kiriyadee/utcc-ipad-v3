@@ -4,7 +4,7 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import type { Provider } from "next-auth/providers";
 import { eq } from "drizzle-orm";
 import { accounts, sessions, users, verificationTokens } from "@/schema/users";
-import { cookies } from "next/headers";
+import { cookies, type UnsafeUnwrappedCookies } from "next/headers";
 import { encode, decode } from "next-auth/jwt";
 import { AdapterUser } from "next-auth/adapters";
 import { uuidv7 } from "uuidv7";
@@ -85,7 +85,7 @@ const providers: Provider[] = [
           expires: sessionExpiry,
           userId: user.id,
         });
-        const cookieStore = cookies();
+        const cookieStore = await cookies();
         cookieStore.set("next-auth.session-token", sessionToken, {
           expires: sessionExpiry,
         });
@@ -107,7 +107,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   jwt: {
     encode: (params) => {
       if ((SESSION_STRATEGY as SessionStrategy) === "database") {
-        const cookie = cookies().get("next-auth.session-token");
+        const cookie = (cookies() as unknown as UnsafeUnwrappedCookies).get("next-auth.session-token");
         if (cookie) {
           return cookie.value;
         } else {

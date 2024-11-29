@@ -110,14 +110,18 @@ export default function OverviewStatus() {
           <div className="text-sm text-gray-500 mb-4">
             รหัสนักศึกษา: {data?.studentId} | วันที่: {data?.date}
           </div>
-          <motion.div layout className="space-y-4">
+          <motion.div layout style={{ display: "block", marginBottom: "1rem" }}>
             {data?.status.map((item, index) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center space-x-3"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                }}
               >
                 {item.completed ? (
                   <CheckCircle className="text-green-500" />

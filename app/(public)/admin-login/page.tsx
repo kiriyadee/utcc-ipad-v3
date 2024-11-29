@@ -17,13 +17,14 @@ import { redirect } from "next/navigation";
 import { Lock, LogIn } from "lucide-react";
 import ErrorMessage from "@/components/admin/error-message";
 
-export default function AdminLoginPage({
-  searchParams,
-}: {
-  searchParams: { error: string };
-}) {
+export default async function AdminLoginPage(
+  props: {
+    searchParams: Promise<{ error: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    (<div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <Lock className="mr-2 h-6 w-6" />
@@ -80,7 +81,7 @@ export default function AdminLoginPage({
           </form>
           {searchParams.error === "Unauthorized" && (
             // <div className="text-red-500">Unauthorized</div>
-            <ErrorMessage error="Unauthorized" searchParams={searchParams} />
+            (<ErrorMessage error="Unauthorized" searchParams={searchParams} />)
           )}
         </CardContent>
         <CardFooter className="flex justify-center">
@@ -89,6 +90,6 @@ export default function AdminLoginPage({
           </Button>
         </CardFooter>
       </Card>
-    </div>
+    </div>)
   );
 }

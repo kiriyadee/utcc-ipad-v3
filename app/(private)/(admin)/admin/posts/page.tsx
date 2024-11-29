@@ -7,11 +7,12 @@ import { Button } from "@/components/ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: { page: string; pageSize: string };
-}) {
+export default async function Page(
+  props: {
+    searchParams: Promise<{ page: string; pageSize: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const page = parseInt(searchParams.page) || 1;
   const pageIndex = page - 1;
   const pageSize = parseInt(searchParams.pageSize) || 10;

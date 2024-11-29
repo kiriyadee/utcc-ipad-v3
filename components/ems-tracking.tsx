@@ -116,69 +116,71 @@ export default function EnhancedEMSTracking() {
 
           <AnimatePresence>
             {isTracking && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="mt-8"
-              >
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center space-x-2">
-                    <Package className="text-blue-600" />
-                    <span className="font-semibold">{trackingNumber}</span>
+              <div className="mt-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center space-x-2">
+                      <Package className="text-blue-600" />
+                      <span className="font-semibold">{trackingNumber}</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-green-600">
+                      <CheckCircle2 />
+                      <span>In Transit</span>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2 text-green-600">
-                    <CheckCircle2 />
-                    <span>In Transit</span>
-                  </div>
-                </div>
 
-                <div className="relative">
-                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200" />
-                  <Accordion type="single" collapsible className="space-y-4">
-                    {trackingData.map((step, index) => (
-                      <AccordionItem value={`item-${index}`} key={index}>
-                        <AccordionTrigger className="text-left">
-                          <div className="flex items-center space-x-4">
-                            <div className="bg-white p-2 rounded-full shadow-md">
-                              {getStatusIcon(step.status)}
+                  <div className="relative">
+                    <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200" />
+                    <Accordion type="single" collapsible className="space-y-4">
+                      {trackingData.map((step, index) => (
+                        <AccordionItem value={`item-${index}`} key={index}>
+                          <AccordionTrigger className="text-left">
+                            <div className="flex items-center space-x-4">
+                              <div className="bg-white p-2 rounded-full shadow-md">
+                                {getStatusIcon(step.status)}
+                              </div>
+                              <div>
+                                <p className="font-semibold">{step.status}</p>
+                                <p className="text-sm text-gray-500">
+                                  {step.date} - {step.time}
+                                </p>
+                              </div>
                             </div>
-                            <div>
-                              <p className="font-semibold">{step.status}</p>
-                              <p className="text-sm text-gray-500">
-                                {step.date} - {step.time}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="ml-14">
+                              <p className="text-gray-700">{step.location}</p>
+                              <p className="text-sm text-gray-600 mt-2">
+                                {step.description}
                               </p>
                             </div>
-                          </div>
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div className="ml-14">
-                            <p className="text-gray-700">{step.location}</p>
-                            <p className="text-sm text-gray-600 mt-2">
-                              {step.description}
-                            </p>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </div>
 
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="mt-8 text-center"
-                >
-                  <p className="text-gray-600">
-                    Estimated Delivery: September 30, 2023
-                  </p>
-                  <Button className="mt-4" variant="outline">
-                    Subscribe to Updates
-                  </Button>
+                  <div className="mt-8 text-center">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      <p className="text-gray-600">
+                        Estimated Delivery: September 30, 2023
+                      </p>
+                      <Button className="mt-4" variant="outline">
+                        Subscribe to Updates
+                      </Button>
+                    </motion.div>
+                  </div>
                 </motion.div>
-              </motion.div>
+              </div>
             )}
           </AnimatePresence>
         </CardContent>

@@ -3,13 +3,10 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-const SignInForm = dynamic(
-  () =>
-    import("./form")
-      .then((mod) => mod.default)
-      .catch(() => () => <div>Failed to load</div>),
-  { ssr: false }
-);
+const SignInForm = dynamic(() => import("./form"), {
+  ssr: true,
+  loading: () => <div>Loading...</div>,
+});
 
 export default async function SignInPage() {
   const session = await auth();

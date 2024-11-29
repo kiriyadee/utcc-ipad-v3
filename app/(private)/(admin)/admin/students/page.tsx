@@ -9,11 +9,12 @@ import Link from "next/link";
 import { Icons } from "@/components/icons";
 import StudentExcelDialog from "@/components/private/students/student-upload-excel";
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: { page: string; pageSize: string };
-}) {
+export default async function Page(
+  props: {
+    searchParams: Promise<{ page: string; pageSize: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const page = parseInt(searchParams.page) || 1;
   const pageIndex = page - 1;
   const pageSize = parseInt(searchParams.pageSize) || 10;
